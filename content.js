@@ -1,69 +1,85 @@
-const sodukuCells = document.querySelectorAll('div[data-cell]');
-const btnNums = document.querySelectorAll('div[role="gridcell"]')
-sodukuCells.forEach(function(div) {
-  div.addEventListener('click', function() {
-  	console.log("clicked")
-  	resetColors();
-  	div.style.backgroundColor = '#e6c500';
-  	const val = div.getAttribute('aria-label');
+const sudokuCells = document.querySelectorAll('div[data-cell]');
+const btnNums = document.querySelectorAll('div[role="gridcell"]');
 
-  	if(val != "empty"){
+//Update on Click
+sudokuCells.forEach(function (div) {
+	div.addEventListener('click', function () {
 
-  	sodukuCells.forEach(function(divs){
-  		const vals = divs.getAttribute('aria-label');
-  		if(val == vals){
-  			divs.style.backgroundColor = '#e6c500';
-  		}
-  	})
-  	}
+		resetColors();
+		div.style.backgroundColor = '#e6c500';
+		const val = div.getAttribute('aria-label');
 
-  });
+		if (val != "empty") {
+			highlightNumbers(val);
+		}
+
+	});
+});
+
+//Update on Number Click
+btnNums.forEach(function (divs) {
+	divs.addEventListener('click', function () {
+		const svg = divs.querySelector('svg');
+
+		if (svg != null) {
+			val = svg.getAttribute('number');
+			resetColors();
+			highlightNumbers(val);
+		}
+
+
+
+	});
+});
+
+//On Keydown Press
+document.addEventListener('keydown', (event) => {
+	if (event.key >= '1' && event.key <= '9') {
+		resetColors();
+		highlightNumbers(event.key);
+	}
 });
 
 //Reset Color Scheme to original
-function resetColors(){
-	console.log("resetColors")
-	sodukuCells.forEach(function(div){
-		const scell = div.getAttribute('class');
-		if(scell == "su-cell" || scell == "su-cell selected" || scell == "su-cell guessed selected" || scell == "su-cell guessed"|| scell == "su-cell guessed selected conflicted" || scell == "su-cell guessed conflicted"){
-			div.style.backgroundColor = '#fff';
-		}else{
-			div.style.backgroundColor = '#e6e6e6';
+function resetColors() {
+	sudokuCells.forEach(function (div) {
+		if (div.classList.contains("su-cell")) {
+			if (div.classList.contains("prefilled")) {
+				div.style.backgroundColor = '#e6e6e6';
+			} else {
+				div.style.backgroundColor = '#fff';
+			}
 		}
-	})
-}
+	});
 
-//Update on Click
-
-//Update on Number Click
-btnNums.forEach(function(divs) {
-	console.log("clicked2")
-  divs.addEventListener('click', function() {
-  	svg = divs.querySelector('svg');
-  	if(svg != null){
-  		val = svg.getAttribute('number');
-  		highlightNumbers(val);
-  	}
-
-  	
-
-  });
-});
-
-function highlightNumbers(num){
-			console.log("highlightNumbers")
-	  	sodukuCells.forEach(function(divs){
-  		const vals = divs.getAttribute('aria-label');
-  		if(num == vals){
-  			divs.style.backgroundColor = '#e6c500';
-  		}
-  	})
+	const candSvgs = document.querySelectorAll('svg[class="su-candidate"]');
+	candSvgs.forEach(function (candSvg) {
+		const candPath = candSvg.querySelector('path');
+		if (candPath) {
+			candPath.style.cssText = "";
+		}
+	});
 
 }
 
-document.addEventListener('keydown', (event) => {
-  if (event.key >= '0' && event.key <= '9') {
-  	resetColors();
-    highlightNumbers(event.key);
-  }
-});
+// Highlight Board Numbers
+function highlightNumbers(num) {
+	const candSvgs = document.querySelectorAll('svg[class="su-candidate"]');
+
+	sudokuCells.forEach(function (divs) {
+		const vals = divs.getAttribute('aria-label');
+		if (num == vals) {
+			divs.style.backgroundColor = '#e6c500';
+		}
+
+	});
+	candSvgs.forEach(function (candSvg) {
+		if (num == candSvg.getAttribute('number')) {
+			const candPath = candSvg.querySelector('path');
+			if (candPath) {
+				candPath.style.cssText = "fill: #e6c500";
+			}
+		}
+	});
+
+}
