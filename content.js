@@ -1,6 +1,7 @@
 const sudokuCells = document.querySelectorAll('div[data-cell]');
 const btnNums = document.querySelectorAll('div[role="gridcell"]');
 
+document.querySelector('input[name="lightenComplete"]').click();
 console.log("loading extension")
 //Update on Click
 sudokuCells.forEach(function (div) {
