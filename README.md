@@ -1,23 +1,45 @@
-# New York Times Sudoku Highlighter
-This is a Chrome extension that highlights all the occurrences of the same number on the New York Times Sudoku board. The extension makes it easier to solve the puzzle by allowing you to quickly see which cells contain the same number.
+# Sudoku Highlighter Extension
 
-# Installation
-To install the extension, follow these steps:
+The Sudoku Highlighter Extension is a browser extension that enhances your Sudoku-solving experience by allowing you to highlight the same numbers on the Sudoku grid and customize the highlight color. Additionally, it provides an option to automatically show candidates, eliminating the need to click it every time you start a new puzzle.
 
-* Download the Extension
-* Open the Chrome browser on your computer.
-* Search "chrome://extensions/"
-* Turn on Developer Mode
-* Click "Load unpacked".
-* Select this extension folder
+TBD!!! ![Sudoku Highlighter Extension Screenshot](screenshot.png)
 
-To use the extension, simply open the New York Times Sudoku puzzle you want to solve in your browser. The extension will automatically detect the puzzle and highlight all the occurrences of the same number on the board.
-If not detected refresh your page. 
+## Features
 
-To disable the  highlighting, click on the extension icon in your browser toolbar and toggle the switch to the off position.
+- **Number Highlighting**: Easily highlight all occurrences of a selected number on the Sudoku grid by simply clicking on it.
 
-# Feedback
-If you have any feedback or suggestions for the extension, please email me at TBD. I am constantly working to improve the extension and welcome your input.
+- **Custom Highlight Color**: You can choose your preferred highlight color from a selection of pre-defined colors or customize your own.
 
-# Disclaimer
-This extension is not affiliated with or endorsed by The New York Times. The New York Times is a registered trademark of The New York Times Company.
+- **Auto Show Candidates**: The extension can automatically show the candidate numbers for each cell when you start a new puzzle, streamlining the Sudoku-solving process.
+
+## Installation
+
+Follow these steps to install the Sudoku Highlighter Extension:
+
+1. Go to the Chrome/Firefox/Edge Extension Store (depending on your browser).
+
+2. Search for "Sudoku Highlighter" in the extension store search bar.
+
+3. Click on the "Install" button to add the extension to your browser.
+
+4. The extension will be added to your browser's toolbar, and you can access it by clicking on the Sudoku Highlighter icon.
+
+## Usage
+
+1. Open a Sudoku puzzle in your browser.
+
+2. Click on the Sudoku Highlighter icon in the browser toolbar to activate the extension.
+
+3. To highlight same numbers, simply click on any number in the Sudoku grid. All occurrences of that number will be highlighted.
+
+4. To customize the highlight color, click on the "Settings" icon within the extension pop-up. Choose from the pre-defined colors or use the color picker to select your own.
+
+5. If you prefer to have candidates automatically displayed for each cell when starting a new puzzle, enable the "Auto Show Candidates" option in the extension settings.
+
+6. To disable the extension, click on the Sudoku Highlighter icon in the browser toolbar again.
+
+## Feedback and Support
+
+If you encounter any issues or have suggestions for improving the Sudoku Highlighter Extension, we'd love to hear from you. Please submit any feedback or questions @
+
+Happy Sudoku solving!
