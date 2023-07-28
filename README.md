@@ -14,15 +14,7 @@ TBD!!! ![Sudoku Highlighter Extension Screenshot](screenshot.png)
 
 ## Installation
 
-Follow these steps to install the Sudoku Highlighter Extension:
-
-1. Go to the Chrome/Firefox/Edge Extension Store (depending on your browser).
-
-2. Search for "Sudoku Highlighter" in the extension store search bar.
-
-3. Click on the "Install" button to add the extension to your browser.
-
-4. The extension will be added to your browser's toolbar, and you can access it by clicking on the Sudoku Highlighter icon.
+###
 
 ## Usage
 
